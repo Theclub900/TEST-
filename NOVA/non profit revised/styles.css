@@ -1,0 +1,267 @@
+/* General Styles */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #f9f9f9, #ecf0f1);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-3px);
+}
+
+a {
+    text-decoration: none;
+    color: #2ecc71;
+}
+
+h1, h2, h3 {
+    color: #34495e;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Styles */
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+    background-color: #27ae60;
+    transform: scale(1.05);
+}
+
+/* Header Styles */
+header {
+    background-color: #34495e;
+    color: white;
+    padding: 20px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, transparent, #2ecc71, transparent);
+    animation: drawLine 4s linear infinite;
+    transition: left 0.5s ease;
+}
+
+header:hover::after {
+    left: 0;
+}
+
+@keyframes drawLine {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Hero Section Styles */
+#hero {
+    padding: 60px 0;
+    background-color: #ecf0f1;
+    position: relative;
+    overflow: hidden;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/hero-overlay-pattern.png') repeat;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+#hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* About Section Styles */
+#about {
+    padding: 60px 0;
+    background: url('images/about-background.jpg') center/cover fixed;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#about .container {
+    background-color: rgba(52, 73, 94, 0.8);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+/* How It Works Section */
+#how-it-works {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+#how-it-works .steps {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#how-it-works .step {
+    flex: 1;
+    min-width: 250px;
+    margin: 15px;
+    padding: 20px;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+#how-it-works .step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Events Section Styles */
+#events {
+    padding: 60px 0;
+    background: linear-gradient(to bottom, #f9f9f9, #fff);
+}
+
+#events .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+#events .event {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#events .event:hover {
+    transform: translateY(-5px);
+}
+
+#events .event img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    object-fit: cover;
+    height: 200px;
+}
+
+/* Donate & Volunteer Sections */
+#donate, #volunteer {
+    padding: 80px 0;
+    background: url('images/donation-volunteer-bg.jpg') center/cover fixed;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#donate .container, #volunteer .container {
+    background-color: rgba(52, 73, 94, 0.8);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.donation-options {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.donation-option {
+    flex: 1;
+    min-width: 200px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Contact Section Styles */
+#contact {
+    padding: 60px 0;
+    background: linear-gradient(to bottom, #ecf0f1, #f9f9f9);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #34495e;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, transparent, #2ecc71, transparent);
+    animation: drawLine 4s linear infinite reverse;
+}
+
+/* Responsive Design */
+@media(max-width: 768px) {
+    #events .container {
+        grid-template-columns: 1fr;
+    }
+
+    .donation-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .donation-option {
+        width: 90%;
+    }
+
+    #about {
+        background-attachment: scroll;
+    }
+
+    #donate, #volunteer {
+        background-attachment: scroll;
+    }
+
+    #how-it-works .steps {
+        flex-direction: column;
+    }
+}
